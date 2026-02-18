@@ -13,16 +13,18 @@ const useOnScreen = (options) => {
       }
     }, options);
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current; // ✅ FIX: capture ref.current before async cleanup
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // ✅ FIX: use captured value, not ref.current
       }
     };
-  }, [ref, options]);
+  }, [options]); // ✅ FIX: removed `ref` from deps — refs are stable and don't need to be listed
 
   return [ref, isVisible];
 };
@@ -130,7 +132,7 @@ const WhyChooseUs = () => {
       ref={sectionRef}
       className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
     >
-      <div className=" relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

@@ -17,8 +17,7 @@ const Navbar = () => {
 
   // For parallax effects - smoother transitions
   const { scrollY } = useScroll();
-  const navbarBlur = useTransform(scrollY, [0, 50], [0, 16]);
-  const navbarOpacity = useTransform(scrollY, [0, 50], [0.6, 0.9]);
+  // ✅ FIX: removed unused navbarBlur and navbarOpacity — only navbarY is used in JSX
   const navbarY = useTransform(scrollY, [0, 100], [0, -5]);
 
   // Smooth scroll detection with RAF for performance
@@ -258,7 +257,6 @@ const Navbar = () => {
                           ? "text-gray-700 hover:text-black"
                           : "text-white hover:text-gray-200"
                     }
-
                   `}
                 >
                   <span className="relative z-10">{link}</span>

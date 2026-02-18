@@ -15,7 +15,7 @@ const Footer = () => {
   const [email, setEmail] = useState('');
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-  const [hoveredSocial, setHoveredSocial] = useState(null);
+  // ✅ FIX: removed unused `hoveredSocial` state
   const [subscribed, setSubscribed] = useState(false);
 
   // Back to top functionality
@@ -40,32 +40,32 @@ const Footer = () => {
 
   const footerLinks = {
     product: [
-      { name: 'Features', href: '#', icon: FiStar },
-      { name: 'Security', href: '#', icon: FiShield },
-      { name: 'Analytics', href: '#', icon: FiTrendingUp },
-      { name: 'Updates', href: '#', icon: FaRegBell },
+      { name: 'Features', href: '/features', icon: FiStar },
+      { name: 'Security', href: '/security', icon: FiShield },
+      { name: 'Analytics', href: '/analytics', icon: FiTrendingUp },
+      { name: 'Updates', href: '/updates', icon: FaRegBell },
     ],
     company: [
-      { name: 'About', href: '#', icon: FiBriefcase },
-      { name: 'Blog', href: '#', icon: FiBook },
-      { name: 'Careers', href: '#', icon: FiUsers },
-      { name: 'Press', href: '#', icon: FiFileText },
+      { name: 'About', href: '/about', icon: FiBriefcase },
+      { name: 'Blog', href: '/blog', icon: FiBook },
+      { name: 'Careers', href: '/careers', icon: FiUsers },
+      { name: 'Press', href: '/press', icon: FiFileText },
     ],
     resources: [
-      { name: 'Help Center', href: '#', icon: FiHelpCircle },
-      { name: 'Community', href: '#', icon: FaRegCompass },
-      { name: 'Status', href: '#', icon: FaRegClock },
-      { name: 'Contact', href: '#', icon: FaRegEnvelope },
+      { name: 'Help Center', href: '/help', icon: FiHelpCircle },
+      { name: 'Community', href: '/community', icon: FaRegCompass },
+      { name: 'Status', href: '/status', icon: FaRegClock },
+      { name: 'Contact', href: '/contact', icon: FaRegEnvelope },
     ]
   };
 
   const socialLinks = [
-    { icon: FiGithub, href: '#', label: 'GitHub', color: '#333' },
-    { icon: FiTwitter, href: '#', label: 'Twitter', color: '#1DA1F2' },
-    { icon: FiLinkedin, href: '#', label: 'LinkedIn', color: '#0A66C2' },
-    { icon: FiInstagram, href: '#', label: 'Instagram', color: '#E4405F' },
-    { icon: FiFacebook, href: '#', label: 'Facebook', color: '#1877F2' },
-    { icon: FaDiscord, href: '#', label: 'Discord', color: '#5865F2' },
+    { icon: FiGithub, href: 'https://github.com', label: 'GitHub', color: '#333' },
+    { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter', color: '#1DA1F2' },
+    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: '#0A66C2' },
+    { icon: FiInstagram, href: 'https://instagram.com', label: 'Instagram', color: '#E4405F' },
+    { icon: FiFacebook, href: 'https://facebook.com', label: 'Facebook', color: '#1877F2' },
+    { icon: FaDiscord, href: 'https://discord.com', label: 'Discord', color: '#5865F2' },
   ];
 
   const contactInfo = [
@@ -284,7 +284,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Links columns - 3 columns */}
+          {/* Links columns */}
           {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
             <motion.div
               key={category}
@@ -342,7 +342,7 @@ const Footer = () => {
             </motion.div>
           ))}
 
-          {/* Newsletter - 1 column */}
+          {/* Newsletter */}
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-4">
             <motion.h3
               whileHover={{ x: 5 }}
@@ -417,8 +417,7 @@ const Footer = () => {
                     whileInView="visible"
                     whileHover="hover"
                     whileTap="tap"
-                    onHoverStart={() => setHoveredSocial(index)}
-                    onHoverEnd={() => setHoveredSocial(null)}
+                    // ✅ FIX: removed onHoverStart/onHoverEnd that set unused hoveredSocial state
                     className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg relative overflow-hidden group"
                     style={{ color: social.color }}
                   >
@@ -440,23 +439,26 @@ const Footer = () => {
             {/* Additional social platforms */}
             <div className="flex gap-3">
               <motion.a
-                href="/"
+                href="https://youtube.com"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
+                aria-label="YouTube"
               >
                 <FaYoutube className="w-4 h-4 text-red-600" />
               </motion.a>
               <motion.a
-                href="/"
+                href="https://dribbble.com"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
+                aria-label="Dribbble"
               >
                 <FaDribbble className="w-4 h-4 text-pink-600" />
               </motion.a>
               <motion.a
-                href="/"
+                href="https://behance.net"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
+                aria-label="Behance"
               >
                 <FaBehance className="w-4 h-4 text-blue-700" />
               </motion.a>
@@ -492,7 +494,7 @@ const Footer = () => {
               {['Privacy', 'Terms', 'Cookies', 'Accessibility'].map((text, index) => (
                 <motion.a
                   key={index}
-                  href="/"
+                  href={`/${text.toLowerCase()}`}
                   whileHover={{ scale: 1.1, color: '#3B82F6' }}
                   whileTap={{ scale: 0.95 }}
                   className="text-sm text-gray-500 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -502,7 +504,7 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Payment methods or badges */}
+            {/* Badges */}
             <div className="flex space-x-2">
               <motion.div
                 whileHover={{ y: -2 }}
@@ -523,6 +525,5 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default Footer;
