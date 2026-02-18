@@ -440,21 +440,21 @@ const Footer = () => {
             {/* Additional social platforms */}
             <div className="flex gap-3">
               <motion.a
-                href="#"
+                href="/"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
               >
                 <FaYoutube className="w-4 h-4 text-red-600" />
               </motion.a>
               <motion.a
-                href="#"
+                href="/"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
               >
                 <FaDribbble className="w-4 h-4 text-pink-600" />
               </motion.a>
               <motion.a
-                href="#"
+                href="/"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
               >
@@ -492,7 +492,7 @@ const Footer = () => {
               {['Privacy', 'Terms', 'Cookies', 'Accessibility'].map((text, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href="/"
                   whileHover={{ scale: 1.1, color: '#3B82F6' }}
                   whileTap={{ scale: 0.95 }}
                   className="text-sm text-gray-500 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -523,5 +523,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;

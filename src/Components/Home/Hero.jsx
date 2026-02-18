@@ -110,12 +110,12 @@ const RealEstateHero = () => {
         <div className="mt-16 border-t border-white/10 pt-8">
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400 lg:justify-between">
             <span className="font-medium text-white">Browse by:</span>
-            <a href="#" className="hover:text-white transition">Houses</a>
-            <a href="#" className="hover:text-white transition">Apartments</a>
-            <a href="#" className="hover:text-white transition">Condos</a>
-            <a href="#" className="hover:text-white transition">Townhomes</a>
-            <a href="#" className="hover:text-white transition">Lots & land</a>
-            <a href="#" className="hover:text-white transition">Commercial</a>
+            <a href="/" className="hover:text-white transition">Houses</a>
+            <a href="/" className="hover:text-white transition">Apartments</a>
+            <a href="/" className="hover:text-white transition">Condos</a>
+            <a href="/" className="hover:text-white transition">Townhomes</a>
+            <a href="/" className="hover:text-white transition">Lots & land</a>
+            <a href="/" className="hover:text-white transition">Commercial</a>
           </div>
         </div>
       </div>
