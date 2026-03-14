@@ -136,9 +136,9 @@ const WhyChooseUs = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Why <span className="text-blue-600">Choose Us</span>
+            Why <span className="text-red-600">Choose Us</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Experience the difference with our dedicated real estate services
             tailored just for you.
@@ -156,14 +156,14 @@ const WhyChooseUs = () => {
             >
               {/* Icon with animated background */}
               <div className="relative mb-6 inline-block">
-                <div className="absolute inset-0 bg-blue-100 rounded-full blur-md group-hover:blur-lg transition-all duration-300 opacity-75 group-hover:opacity-100 scale-110 group-hover:scale-125"></div>
-                <div className="relative text-blue-600 group-hover:text-blue-700 transition-colors duration-300 transform group-hover:scale-110">
+                <div className="absolute inset-0 bg-red-100 rounded-full blur-md group-hover:blur-lg transition-all duration-300 opacity-75 group-hover:opacity-100 scale-110 group-hover:scale-125"></div>
+                <div className="relative text-red-600 group-hover:text-red-700transition-colors duration-300 transform group-hover:scale-110">
                   {feature.icon}
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-red-600 transition-colors duration-300">
                 {feature.title}
               </h3>
 
@@ -173,23 +173,23 @@ const WhyChooseUs = () => {
               </p>
 
               {/* Decorative corner line */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></div>
-              <div className="absolute top-0 right-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
             </div>
           ))}
         </div>
 
         {/* Optional CTA Banner */}
         <div className="mt-20 text-center">
-          <div className="inline-flex items-center bg-blue-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
-            <span className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium mr-4">
+          <div className="inline-flex items-center bg-red-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
+            <span className="bg-red-600 text-white px-6 py-2 rounded-full font-medium mr-4">
               Join Today
             </span>
             <span className="text-gray-700">
               Discover your dream property with us
             </span>
             <svg
-              className="w-5 h-5 ml-3 text-blue-600 animate-pulse"
+              className="w-5 h-5 ml-3 text-red-600 animate-pulse"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -206,8 +206,8 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Background decorative elements */}
-      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="hidden lg:block absolute right-0 bottom-1/4 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="hidden lg:block absolute right-0 bottom-1/4 w-72 h-72 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
     </section>
   );
 };

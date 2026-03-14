@@ -136,9 +136,9 @@ const OurAchievements = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Our <span className="text-blue-600">Achievements</span>
+            Our <span className="text-red-600">Achievements</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Milestones that define our journey and commitment to excellence.
           </p>
@@ -155,14 +155,14 @@ const OurAchievements = () => {
             >
               {/* Icon with animated background */}
               <div className="relative mb-4 inline-block">
-                <div className="absolute inset-0 bg-blue-100 rounded-full blur-md group-hover:blur-lg transition-all duration-300 opacity-75 group-hover:opacity-100 scale-110 group-hover:scale-125"></div>
-                <div className="relative text-blue-600 group-hover:text-blue-700 transition-colors duration-300 transform group-hover:scale-110">
+                <div className="absolute inset-0 bg-red-100 rounded-full blur-md group-hover:blur-lg transition-all duration-300 opacity-75 group-hover:opacity-100 scale-110 group-hover:scale-125"></div>
+                <div className="relative text-red-600 group-hover:text-red-700 transition-colors duration-300 transform group-hover:scale-110">
                   {item.icon}
                 </div>
               </div>
 
               {/* Stat - bold and large */}
-              <div className="text-3xl font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">
+              <div className="text-3xl font-bold text-gray-800 mb-1 group-hover:text-red-600 transition-colors duration-300">
                 {item.stat}
               </div>
 
@@ -177,21 +177,21 @@ const OurAchievements = () => {
               </p>
 
               {/* Decorative corner lines (same style) */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></div>
-              <div className="absolute top-0 right-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
             </div>
           ))}
         </div>
 
         {/* Optional CTA Banner (adjusted for achievements) */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center bg-blue-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
-            <span className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium mr-4">
+          <div className="inline-flex items-center bg-red-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
+            <span className="bg-red-600 text-white px-6 py-2 rounded-full font-medium mr-4">
               View All
             </span>
             <span className="text-gray-700">Explore our success story</span>
             <svg
-              className="w-5 h-5 ml-3 text-blue-600 animate-pulse"
+              className="w-5 h-5 ml-3 text-red-600 animate-pulse"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -208,7 +208,7 @@ const OurAchievements = () => {
       </div>
 
       {/* Background decorative elements (optional) */}
-      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="hidden lg:block absolute right-0 bottom-1/4 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
     </section>
   );

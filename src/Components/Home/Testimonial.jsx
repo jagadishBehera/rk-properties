@@ -46,7 +46,7 @@ const Testimonials = () => {
         "The team made buying my first home an absolute joy. Their guidance and local expertise helped me find the perfect property in no time.",
       avatar: (
         <svg
-          className="w-12 h-12 text-blue-600"
+          className="w-12 h-12 text-red-600"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -62,7 +62,7 @@ const Testimonials = () => {
         "Exceptional service and market insight. They helped me diversify my portfolio with high-value properties that exceeded my expectations.",
       avatar: (
         <svg
-          className="w-12 h-12 text-blue-600"
+          className="w-12 h-12 text-red-600"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -78,7 +78,7 @@ const Testimonials = () => {
         "From listing to closing, they were with me every step. The property sold above asking price in just one week. Truly remarkable agents.",
       avatar: (
         <svg
-          className="w-12 h-12 text-blue-600"
+          className="w-12 h-12 text-red-600"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -94,7 +94,7 @@ const Testimonials = () => {
         "Professional, transparent, and incredibly efficient. They secured a prime commercial space for our business with excellent terms.",
       avatar: (
         <svg
-          className="w-12 h-12 text-blue-600"
+          className="w-12 h-12 text-red-600"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -133,9 +133,9 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Client <span className="text-blue-600">Testimonials</span>
+            Client <span className="text-red-600">Testimonials</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Hear what our clients have to say about their experience with us.
           </p>
@@ -151,7 +151,7 @@ const Testimonials = () => {
                 transition-all duration-700 ease-out ${animationDelay[index]}`}
             >
               {/* Quote icon (decorative top) */}
-              <div className="text-blue-100 mb-2">
+              <div className="text-red-100 mb-2">
                 <svg
                   className="w-10 h-10"
                   fill="currentColor"
@@ -171,11 +171,11 @@ const Testimonials = () => {
 
               {/* Avatar and client info */}
               <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-100 transition-colors duration-300">
+                <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mr-3 group-hover:bg-red-100 transition-colors duration-300">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                  <h4 className="font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-300">
                     {testimonial.name}
                   </h4>
                   <p className="text-sm text-gray-500">{testimonial.role}</p>
@@ -183,21 +183,21 @@ const Testimonials = () => {
               </div>
 
               {/* Decorative corner lines (same style) */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></div>
-              <div className="absolute top-0 right-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
             </div>
           ))}
         </div>
 
         {/* Optional CTA Banner (adjusted for testimonials) */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center bg-blue-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
-            <span className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium mr-4">
+          <div className="inline-flex items-center bg-red-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
+            <span className="bg-red-600 text-white px-6 py-2 rounded-full font-medium mr-4">
               Share Your Story
             </span>
             <span className="text-gray-700">Become our next success story</span>
             <svg
-              className="w-5 h-5 ml-3 text-blue-600 animate-pulse"
+              className="w-5 h-5 ml-3 text-red-600 animate-pulse"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -214,7 +214,7 @@ const Testimonials = () => {
       </div>
 
       {/* Background decorative elements */}
-      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="hidden lg:block absolute right-0 bottom-1/4 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
     </section>
   );

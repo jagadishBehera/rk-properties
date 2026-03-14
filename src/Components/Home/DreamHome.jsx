@@ -100,9 +100,9 @@ const DreamHome = () => {
       {/* Responsive Header */}
        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Dream <span className="text-blue-600">House</span>
+            Dream <span className="text-red-600">House</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Find Your Dream Home With Us
           </p>
@@ -171,7 +171,7 @@ const DreamHome = () => {
 
                 {/* Action Buttons - Responsive */}
                 <div className="flex gap-2">
-                  <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors">
+                  <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors">
                     View
                   </button>
                   <button className="p-1.5 sm:p-2 border border-gray-200 hover:border-gray-300 rounded-lg transition-colors">

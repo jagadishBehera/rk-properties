@@ -15,6 +15,7 @@
     "classnames": "^2.3.2",
     "crypto-js": "^4.2.0",
     "framer-motion": "^12.34.2",
+    "gsap": "^3.14.2",
     "lucide-react": "^0.564.0",
     "outline": "^0.1.1",
     "react": "^18.2.0",
