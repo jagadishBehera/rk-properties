@@ -249,11 +249,11 @@ const Navbar = () => {
                     onFocus={() => setSearchFocused(true)}
                     onBlur={() => setSearchFocused(false)}
                     className={`
-                      w-48 pl-9 pr-4 py-2 text-sm rounded-lg
-                      transition-all duration-300 outline-none
-                      bg-gray-100 border border-gray-200 focus:border-red-500
-                      focus:ring-2 focus:ring-red-500/20
-                    `}
+    w-48 pl-9 pr-4 py-2 text-sm rounded-lg
+    transition-all duration-300 outline-none
+    bg-gray-100 border
+    ${searchFocused ? "border-red-500 ring-2 ring-red-500/20" : "border-gray-200"}
+  `}
                   />
                   <Search
                     className={`
@@ -419,7 +419,7 @@ const Navbar = () => {
                     </motion.button>
 
                     {/* Footer Links */}
-                    <div className="mt-6 pt-6 border-t border-gray-100">
+                    {/* <div className="mt-6 pt-6 border-t border-gray-100">
                       <div className="flex justify-center space-x-4">
                         <a
                           href="#"
@@ -435,7 +435,7 @@ const Navbar = () => {
                           Register
                         </a>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </motion.div>
