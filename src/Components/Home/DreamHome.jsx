@@ -95,7 +95,7 @@ const DreamHome = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-3 sm:p-4 md:p-6">
+    <div className="min-h-screen  p-3 sm:p-4 md:p-6">
       {/* Responsive Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import bgImage from "../../assets/bg-section4.jpg";
+import bottomPattern from "../../assets/bg-section.png";
 
 // Custom hook for intersection observer to trigger animations on scroll
 const useOnScreen = (options) => {
@@ -136,6 +137,12 @@ const WhyChooseUs = () => {
         style={{ backgroundImage: `url(${bgImage})` }}
       ></div>
 
+      {/* Bottom Repeating Pattern */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-24 bg-repeat-x bg-bottom pointer-events-none"
+        style={{ backgroundImage: `url(${bottomPattern})` }}
+      ></div>
+
       {/* Light Red Overlay */}
       {/* <div className="absolute inset-0 bg-red-600/10"></div> */}
       <div className="relative mx-auto max-w-7xl">
@@ -190,7 +197,9 @@ const WhyChooseUs = () => {
             <span className="bg-red-500 text-white px-6 py-2 rounded-full font-medium mr-4 shadow-lg">
               Join Today
             </span>
-            <span className="text-gray-200">Discover your dream property with us</span>
+            <span className="text-gray-200">
+              Discover your dream property with us
+            </span>
             <svg
               className="w-5 h-5 ml-3 text-red-400 animate-pulse"
               fill="none"
