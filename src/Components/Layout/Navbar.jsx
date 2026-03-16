@@ -6,7 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { Menu, X, Zap, Search, ChevronRight } from "lucide-react";
-
+import logo from "../../assets/logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -141,7 +141,7 @@ const Navbar = () => {
               ${
                 scrolled
                   ? "bg-white/90 backdrop-blur-xl shadow-lg border border-gray-200"
-                  : "bg-white/70 backdrop-blur-md border border-transparent"
+                  : ""
               }
             `}
           >
@@ -162,27 +162,14 @@ const Navbar = () => {
                 initial="initial"
                 whileHover="hover"
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center space-x-2 group"
+                className="flex items-center group"
               >
-                <span
-                  className={`
-                  text-2xl sm:text-3xl font-bold tracking-tight transition-colors duration-300
-                  ${scrolled ? "text-gray-900" : "text-gray-900"}
-                  group-hover:text-red-500
-                `}
-                >
-                  RK
-                </span>
-                <motion.div
-                  className="w-1.5 h-1.5 rounded-full bg-red-500"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                <motion.img
+                  src={logo}
+                  alt="Logo"
+                  className="h-12 sm:h-14 w-auto object-contain"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
                 />
               </motion.a>
 

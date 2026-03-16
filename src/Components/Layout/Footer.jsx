@@ -1,18 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FiMail, FiPhone, FiMapPin, FiChevronUp, FiSend, FiArrowRight,
-  FiGithub, FiTwitter, FiLinkedin, FiInstagram, FiFacebook,
-  FiHeart, FiStar, FiShield, FiTrendingUp, FiBriefcase,
-  FiBook, FiUsers, FiHelpCircle, FiFileText
-} from 'react-icons/fi';
-import { 
-  FaRegEnvelope, FaRegBell, FaRegClock, FaRegCompass,
-  FaDiscord, FaYoutube, FaDribbble, FaBehance
-} from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiChevronUp,
+  FiSend,
+  FiArrowRight,
+  FiGithub,
+  FiTwitter,
+  FiLinkedin,
+  FiInstagram,
+  FiFacebook,
+  FiHeart,
+  FiStar,
+  FiShield,
+  FiTrendingUp,
+  FiBriefcase,
+  FiBook,
+  FiUsers,
+  FiHelpCircle,
+  FiFileText,
+} from "react-icons/fi";
+import {
+  FaRegEnvelope,
+  FaRegBell,
+  FaRegClock,
+  FaRegCompass,
+  FaDiscord,
+  FaYoutube,
+  FaDribbble,
+  FaBehance,
+} from "react-icons/fa";
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const [subscribed, setSubscribed] = useState(false);
@@ -21,63 +43,93 @@ const Footer = () => {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     setSubscribed(true);
-    setEmail('');
+    setEmail("");
     setTimeout(() => setSubscribed(false), 3000);
   };
 
   const footerLinks = {
     product: [
-      { name: 'Features', href: '/features', icon: FiStar },
-      { name: 'Security', href: '/security', icon: FiShield },
-      { name: 'Analytics', href: '/analytics', icon: FiTrendingUp },
-      { name: 'Updates', href: '/updates', icon: FaRegBell },
+      { name: "Features", href: "/features", icon: FiStar },
+      { name: "Security", href: "/security", icon: FiShield },
+      { name: "Analytics", href: "/analytics", icon: FiTrendingUp },
+      { name: "Updates", href: "/updates", icon: FaRegBell },
     ],
     company: [
-      { name: 'About', href: '/about', icon: FiBriefcase },
-      { name: 'Blog', href: '/blog', icon: FiBook },
-      { name: 'Careers', href: '/careers', icon: FiUsers },
-      { name: 'Press', href: '/press', icon: FiFileText },
+      { name: "About", href: "/about", icon: FiBriefcase },
+      { name: "Blog", href: "/blog", icon: FiBook },
+      { name: "Careers", href: "/careers", icon: FiUsers },
+      { name: "Press", href: "/press", icon: FiFileText },
     ],
     resources: [
-      { name: 'Help Center', href: '/help', icon: FiHelpCircle },
-      { name: 'Community', href: '/community', icon: FaRegCompass },
-      { name: 'Status', href: '/status', icon: FaRegClock },
-      { name: 'Contact', href: '/contact', icon: FaRegEnvelope },
-    ]
+      { name: "Help Center", href: "/help", icon: FiHelpCircle },
+      { name: "Community", href: "/community", icon: FaRegCompass },
+      { name: "Status", href: "/status", icon: FaRegClock },
+      { name: "Contact", href: "/contact", icon: FaRegEnvelope },
+    ],
   };
 
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com', label: 'GitHub', color: '#e2e8f0' },
-    { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter', color: '#1DA1F2' },
-    { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: '#0A66C2' },
-    { icon: FiInstagram, href: 'https://instagram.com', label: 'Instagram', color: '#E4405F' },
-    { icon: FiFacebook, href: 'https://facebook.com', label: 'Facebook', color: '#1877F2' },
-    { icon: FaDiscord, href: 'https://discord.com', label: 'Discord', color: '#5865F2' },
+    {
+      icon: FiGithub,
+      href: "https://github.com",
+      label: "GitHub",
+      color: "#e2e8f0",
+    },
+    {
+      icon: FiTwitter,
+      href: "https://twitter.com",
+      label: "Twitter",
+      color: "#1DA1F2",
+    },
+    {
+      icon: FiLinkedin,
+      href: "https://linkedin.com",
+      label: "LinkedIn",
+      color: "#0A66C2",
+    },
+    {
+      icon: FiInstagram,
+      href: "https://instagram.com",
+      label: "Instagram",
+      color: "#E4405F",
+    },
+    {
+      icon: FiFacebook,
+      href: "https://facebook.com",
+      label: "Facebook",
+      color: "#1877F2",
+    },
+    {
+      icon: FaDiscord,
+      href: "https://discord.com",
+      label: "Discord",
+      color: "#5865F2",
+    },
   ];
 
   const contactInfo = [
-    { icon: FiMail, text: 'hello@brand.com', delay: 0.2 },
-    { icon: FiPhone, text: '+1 (555) 123-4567', delay: 0.3 },
-    { icon: FiMapPin, text: 'San Francisco, CA', delay: 0.4 },
+    { icon: FiMail, text: "hello@brand.com", delay: 0.2 },
+    { icon: FiPhone, text: "+1 (555) 123-4567", delay: 0.3 },
+    { icon: FiMapPin, text: "San Francisco, CA", delay: 0.4 },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-    }
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
   };
 
   const itemVariants = {
@@ -85,8 +137,8 @@ const Footer = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 12 }
-    }
+      transition: { type: "spring", stiffness: 100, damping: 12 },
+    },
   };
 
   const linkVariants = {
@@ -94,13 +146,13 @@ const Footer = () => {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 200, damping: 20 }
+      transition: { type: "spring", stiffness: 200, damping: 20 },
     },
     hover: {
       x: 8,
       color: "#ef4444",
-      transition: { type: "spring", stiffness: 400, damping: 10 }
-    }
+      transition: { type: "spring", stiffness: 400, damping: 10 },
+    },
   };
 
   const socialVariants = {
@@ -108,14 +160,14 @@ const Footer = () => {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { type: "spring", stiffness: 200, damping: 15 }
+      transition: { type: "spring", stiffness: 200, damping: 15 },
     },
     hover: {
       scale: 1.2,
       y: -5,
-      transition: { type: "spring", stiffness: 400, damping: 10 }
+      transition: { type: "spring", stiffness: 400, damping: 10 },
     },
-    tap: { scale: 0.9 }
+    tap: { scale: 0.9 },
   };
 
   const backToTopVariants = {
@@ -124,14 +176,14 @@ const Footer = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 300, damping: 20 }
+      transition: { type: "spring", stiffness: 300, damping: 20 },
     },
     hover: {
       scale: 1.1,
       boxShadow: "0 10px 25px -5px rgba(239, 68, 68, 0.5)",
-      transition: { type: "spring", stiffness: 400, damping: 10 }
+      transition: { type: "spring", stiffness: 400, damping: 10 },
     },
-    tap: { scale: 0.9 }
+    tap: { scale: 0.9 },
   };
 
   return (
@@ -168,7 +220,10 @@ const Footer = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12"
         >
           {/* Brand column - 2 columns wide */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 space-y-6">
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-2 space-y-6"
+          >
             <motion.div whileHover={{ scale: 1.02 }} className="inline-block">
               <div className="flex items-center space-x-2">
                 <motion.div
@@ -193,8 +248,9 @@ const Footer = () => {
               variants={itemVariants}
               className="text-base leading-relaxed text-gray-400 max-w-md"
             >
-              Creating amazing digital experiences that bring your ideas to life.
-              We're here to help you succeed in the digital world with innovative solutions.
+              Creating amazing digital experiences that bring your ideas to
+              life. We're here to help you succeed in the digital world with
+              innovative solutions.
             </motion.p>
 
             {/* Contact info */}
@@ -235,61 +291,75 @@ const Footer = () => {
           </motion.div>
 
           {/* Links columns */}
-          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
-            <motion.div key={category} variants={itemVariants} className="lg:col-span-1 space-y-4">
-              <motion.h3
-                whileHover={{ x: 5 }}
-                className="text-white font-semibold text-lg capitalize relative inline-block"
+          {Object.entries(footerLinks).map(
+            ([category, links], categoryIndex) => (
+              <motion.div
+                key={category}
+                variants={itemVariants}
+                className="lg:col-span-1 space-y-4"
               >
-                {category}
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-0.5 bg-red-500"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '100%' }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 + categoryIndex * 0.1 }}
-                />
-              </motion.h3>
+                <motion.h3
+                  whileHover={{ x: 5 }}
+                  className="text-white font-semibold text-lg capitalize relative inline-block"
+                >
+                  {category}
+                  <motion.span
+                    className="absolute -bottom-1 left-0 h-0.5 bg-red-500"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.3 + categoryIndex * 0.1,
+                    }}
+                  />
+                </motion.h3>
 
-              <ul className="space-y-3">
-                {links.map((link, index) => {
-                  const Icon = link.icon;
-                  return (
-                    <motion.li
-                      key={index}
-                      variants={linkVariants}
-                      whileHover="hover"
-                      onHoverStart={() => setHoveredLink(`${category}-${index}`)}
-                      onHoverEnd={() => setHoveredLink(null)}
-                    >
-                      <a
-                        href={link.href}
-                        className="text-sm text-gray-400 flex items-center space-x-2 group"
+                <ul className="space-y-3">
+                  {links.map((link, index) => {
+                    const Icon = link.icon;
+                    return (
+                      <motion.li
+                        key={index}
+                        variants={linkVariants}
+                        whileHover="hover"
+                        onHoverStart={() =>
+                          setHoveredLink(`${category}-${index}`)
+                        }
+                        onHoverEnd={() => setHoveredLink(null)}
                       >
-                        <Icon className="w-4 h-4 text-red-400 group-hover:text-red-300 transition-colors" />
-                        <span>{link.name}</span>
-                        <AnimatePresence>
-                          {hoveredLink === `${category}-${index}` && (
-                            <motion.span
-                              initial={{ opacity: 0, x: -5 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              exit={{ opacity: 0, x: -5 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <FiArrowRight className="w-3 h-3 text-red-400" />
-                            </motion.span>
-                          )}
-                        </AnimatePresence>
-                      </a>
-                    </motion.li>
-                  );
-                })}
-              </ul>
-            </motion.div>
-          ))}
+                        <a
+                          href={link.href}
+                          className="text-sm text-gray-400 flex items-center space-x-2 group"
+                        >
+                          <Icon className="w-4 h-4 text-red-400 group-hover:text-red-300 transition-colors" />
+                          <span>{link.name}</span>
+                          <AnimatePresence>
+                            {hoveredLink === `${category}-${index}` && (
+                              <motion.span
+                                initial={{ opacity: 0, x: -5 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -5 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <FiArrowRight className="w-3 h-3 text-red-400" />
+                              </motion.span>
+                            )}
+                          </AnimatePresence>
+                        </a>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
+              </motion.div>
+            ),
+          )}
 
           {/* Newsletter */}
-          <motion.div variants={itemVariants} className="lg:col-span-1 space-y-4">
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-1 space-y-4"
+          >
             <motion.h3
               whileHover={{ x: 5 }}
               className="text-white font-semibold text-lg"
@@ -369,7 +439,7 @@ const Footer = () => {
                       initial={{ scale: 0, opacity: 0 }}
                       whileHover={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.3 }}
-                      style={{ borderRadius: '50%' }}
+                      style={{ borderRadius: "50%" }}
                     />
                   </motion.a>
                 );
@@ -431,17 +501,19 @@ const Footer = () => {
             </motion.div>
 
             <div className="flex flex-wrap justify-center gap-6">
-              {['Privacy', 'Terms', 'Cookies', 'Accessibility'].map((text, index) => (
-                <motion.a
-                  key={index}
-                  href={`/${text.toLowerCase()}`}
-                  whileHover={{ scale: 1.1, color: '#ef4444' }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-sm text-gray-500 hover:text-red-400 transition-colors"
-                >
-                  {text} Policy
-                </motion.a>
-              ))}
+              {["Privacy", "Terms", "Cookies", "Accessibility"].map(
+                (text, index) => (
+                  <motion.a
+                    key={index}
+                    href={`/${text.toLowerCase()}`}
+                    whileHover={{ scale: 1.1, color: "#ef4444" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-sm text-gray-500 hover:text-red-400 transition-colors"
+                  >
+                    {text} Policy
+                  </motion.a>
+                ),
+              )}
             </div>
 
             {/* Badges */}

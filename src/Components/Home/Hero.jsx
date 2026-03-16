@@ -70,7 +70,7 @@ const RealEstateHero = () => {
       "New construction condos",
       "Waterfront properties",
     ],
-    []
+    [],
   );
 
   // Filtered suggestions based on input
@@ -78,10 +78,10 @@ const RealEstateHero = () => {
     () =>
       searchQuery
         ? suggestions.filter((s) =>
-            s.toLowerCase().includes(searchQuery.toLowerCase())
+            s.toLowerCase().includes(searchQuery.toLowerCase()),
           )
         : [],
-    [searchQuery, suggestions]
+    [searchQuery, suggestions],
   );
 
   // Handle keyboard navigation
@@ -93,7 +93,7 @@ const RealEstateHero = () => {
         case "ArrowDown":
           e.preventDefault();
           setActiveSuggestion((prev) =>
-            prev < filteredSuggestions.length - 1 ? prev + 1 : prev
+            prev < filteredSuggestions.length - 1 ? prev + 1 : prev,
           );
           break;
         case "ArrowUp":
@@ -113,7 +113,7 @@ const RealEstateHero = () => {
           break;
       }
     },
-    [isSearchFocused, filteredSuggestions, activeSuggestion]
+    [isSearchFocused, filteredSuggestions, activeSuggestion],
   );
 
   // Animation variants with reduced motion support
@@ -140,7 +140,7 @@ const RealEstateHero = () => {
     >
       {/* Subtle red gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-red-50/30" />
-      
+
       {/* Decorative red accent lines */}
       {/* <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-red-500 to-red-600" />
       <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-red-500 to-red-600" /> */}
@@ -148,7 +148,6 @@ const RealEstateHero = () => {
       {/* Main content */}
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
           {/* Left column - Content */}
           <motion.div
             variants={getVariants(itemVariants)}
@@ -386,9 +385,7 @@ const RealEstateHero = () => {
                   <div>
                     <p className="text-xs text-gray-500">Just listed</p>
                     <p className="font-semibold text-gray-900">1234 Maple St</p>
-                    <p className="text-sm text-red-600 font-medium">
-                      $849,000
-                    </p>
+                    <p className="text-sm text-red-600 font-medium">$849,000</p>
                   </div>
                 </div>
               </motion.div>
@@ -434,10 +431,7 @@ const RealEstateHero = () => {
         </div>
 
         {/* Property types carousel */}
-        <motion.div
-          variants={getVariants(itemVariants)}
-          className="mt-16"
-        >
+        <motion.div variants={getVariants(itemVariants)} className="mt-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-semibold text-gray-900">
               Browse by property type
@@ -525,25 +519,41 @@ const RealEstateHero = () => {
         >
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5 text-red-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
               <span>Verified by experts</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5 text-red-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>
               <span>Secure payments</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5 text-red-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>24/7 support</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5 text-red-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
               <span>Free consultation</span>

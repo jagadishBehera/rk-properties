@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import bgImage from "../../assets/bg-section4.jpg";
 
 // Custom hook for intersection observer to trigger animations on scroll
 const useOnScreen = (options) => {
@@ -13,7 +14,7 @@ const useOnScreen = (options) => {
       }
     }, options);
 
-    const currentRef = ref.current; // ✅ FIX: capture ref.current before async cleanup
+    const currentRef = ref.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -21,10 +22,10 @@ const useOnScreen = (options) => {
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef); // ✅ FIX: use captured value, not ref.current
+        observer.unobserve(currentRef);
       }
     };
-  }, [options]); // ✅ FIX: removed `ref` from deps — refs are stable and don't need to be listed
+  }, [options]);
 
   return [ref, isVisible];
 };
@@ -128,18 +129,23 @@ const WhyChooseUs = () => {
   const animationDelay = ["delay-0", "delay-150", "delay-300", "delay-450"];
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
-    >
+    <section ref={sectionRef} className="relative py-20 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
+
+      {/* Light Red Overlay */}
+      {/* <div className="absolute inset-0 bg-red-600/10"></div> */}
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Why <span className="text-red-600">Choose Us</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Why <span className="text-white">Choose Us</span>
           </h2>
-          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Experience the difference with our dedicated real estate services
             tailored just for you.
           </p>
