@@ -185,17 +185,14 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Optional CTA Banner */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex items-center bg-red-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
-            <span className="bg-red-600 text-white px-6 py-2 rounded-full font-medium mr-4">
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm p-2 pr-6 rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+            <span className="bg-red-500 text-white px-6 py-2 rounded-full font-medium mr-4 shadow-lg">
               Join Today
             </span>
-            <span className="text-gray-700">
-              Discover your dream property with us
-            </span>
+            <span className="text-gray-200">Discover your dream property with us</span>
             <svg
-              className="w-5 h-5 ml-3 text-red-600 animate-pulse"
+              className="w-5 h-5 ml-3 text-red-400 animate-pulse"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

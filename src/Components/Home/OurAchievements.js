@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import bgImage from "../../assets/bg-section4.jpg";
 
 // Custom hook for intersection observer to trigger animations on scroll
 const useOnScreen = (options) => {
@@ -9,7 +10,7 @@ const useOnScreen = (options) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
-        observer.unobserve(entry.target); // once visible, stop observing
+        observer.unobserve(entry.target);
       }
     }, options);
 
@@ -29,6 +30,35 @@ const useOnScreen = (options) => {
   return [ref, isVisible];
 };
 
+// Counter component that animates from 0 to target value
+const AnimatedCounter = ({ target, suffix = "", duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = Math.ceil(target / (duration / 16)); // ~60fps
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [target, duration]);
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
+};
+
 const OurAchievements = () => {
   // Use the custom hook to trigger animation when the section comes into view
   const [sectionRef, isVisible] = useOnScreen({
@@ -36,12 +66,12 @@ const OurAchievements = () => {
     triggerOnce: true,
   });
 
-  // Achievements data array (reduced height by using compact content)
+  // Achievements data array with numeric values for counting
   const achievements = [
     {
       icon: (
         <svg
-          className="w-10 h-10" // slightly smaller icon for compact look
+          className="w-12 h-12 text-white" // white icon to stand out on dark overlay
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -55,14 +85,15 @@ const OurAchievements = () => {
           />
         </svg>
       ),
-      stat: "500+",
+      value: 500,
+      suffix: "+",
       label: "Projects Completed",
       description: "Successfully delivered",
     },
     {
       icon: (
         <svg
-          className="w-10 h-10"
+          className="w-12 h-12 text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -76,14 +107,15 @@ const OurAchievements = () => {
           />
         </svg>
       ),
-      stat: "250+",
+      value: 250,
+      suffix: "+",
       label: "Happy Clients",
       description: "Across the region",
     },
     {
       icon: (
         <svg
-          className="w-10 h-10"
+          className="w-12 h-12 text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -97,14 +129,15 @@ const OurAchievements = () => {
           />
         </svg>
       ),
-      stat: "15+",
+      value: 15,
+      suffix: "+",
       label: "Countries Served",
       description: "Global presence",
     },
     {
       icon: (
         <svg
-          className="w-10 h-10"
+          className="w-12 h-12 text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -118,7 +151,8 @@ const OurAchievements = () => {
           />
         </svg>
       ),
-      stat: "$2.5B",
+      value: 2.5,
+      suffix: "B",
       label: "Property Value",
       description: "Total transactions",
     },
@@ -130,68 +164,82 @@ const OurAchievements = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
+      className="relative py-20 bg-cover bg-fixed bg-center bg-no-repeat overflow-hidden"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+      }}
     >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+      {/* Dark overlay for better text contrast */}
+      {/* <div className="absolute inset-0 bg-black bg-opacity-70"></div> */}
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+        {/* Section Header - with light text to stand out on dark bg */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Our <span className="text-red-600">Achievements</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our <span className="text-white">Achievements</span>
           </h2>
-          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             Milestones that define our journey and commitment to excellence.
           </p>
         </div>
 
-        {/* Achievements Grid — cards with reduced height */}
+        {/* Achievements Grid — no cards, just clean stats with icons */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {achievements.map((item, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-                transition-all duration-700 ease-out ${animationDelay[index]}`}
+              className={`text-center transform transition-all duration-700 ease-out ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              } ${animationDelay[index]}`}
             >
-              {/* Icon with animated background */}
-              <div className="relative mb-4 inline-block">
-                <div className="absolute inset-0 bg-red-100 rounded-full blur-md group-hover:blur-lg transition-all duration-300 opacity-75 group-hover:opacity-100 scale-110 group-hover:scale-125"></div>
-                <div className="relative text-red-600 group-hover:text-red-700 transition-colors duration-300 transform group-hover:scale-110">
+              {/* Icon with subtle glow on hover */}
+              <div className="relative inline-block mb-4 group">
+                <div className="absolute inset-0 bg-red-500/30 rounded-full blur-xl group-hover:bg-red-500/50 transition-all duration-300 scale-150"></div>
+                <div className="relative transform group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
               </div>
 
-              {/* Stat - bold and large */}
-              <div className="text-3xl font-bold text-gray-800 mb-1 group-hover:text-red-600 transition-colors duration-300">
-                {item.stat}
+              {/* Stat - large, bold, with counting animation */}
+              <div className="text-5xl font-bold text-white mb-2">
+                {isVisible ? (
+                  <>
+                    <AnimatedCounter
+                      target={item.value}
+                      suffix={item.suffix}
+                      duration={2000}
+                    />
+                  </>
+                ) : (
+                  `0${item.suffix}`
+                )}
               </div>
 
               {/* Label */}
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
+              <h3 className="text-xl font-semibold text-gray-100 mb-2">
                 {item.label}
               </h3>
 
-              {/* Description (compact) */}
-              <p className="text-gray-500 text-sm leading-relaxed">
+              {/* Description */}
+              <p className="text-gray-300 text-sm leading-relaxed">
                 {item.description}
               </p>
-
-              {/* Decorative corner lines (same style) */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
-              <div className="absolute top-0 right-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500"></div>
             </div>
           ))}
         </div>
 
-        {/* Optional CTA Banner (adjusted for achievements) */}
+        {/* Optional CTA Banner */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center bg-red-50 p-2 pr-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
-            <span className="bg-red-600 text-white px-6 py-2 rounded-full font-medium mr-4">
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm p-2 pr-6 rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+            <span className="bg-red-500 text-white px-6 py-2 rounded-full font-medium mr-4 shadow-lg">
               View All
             </span>
-            <span className="text-gray-700">Explore our success story</span>
+            <span className="text-gray-200">Explore our success story</span>
             <svg
-              className="w-5 h-5 ml-3 text-red-600 animate-pulse"
+              className="w-5 h-5 ml-3 text-red-400 animate-pulse"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -207,9 +255,9 @@ const OurAchievements = () => {
         </div>
       </div>
 
-      {/* Background decorative elements (optional) */}
-      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="hidden lg:block absolute right-0 bottom-1/4 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      {/* Background decorative blobs with lighter colors for dark theme */}
+      <div className="hidden lg:block absolute left-0 top-1/4 w-64 h-64 bg-red-500/10 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
+      <div className="hidden lg:block absolute right-0 bottom-1/4 w-72 h-72 bg-indigo-500/10 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
     </section>
   );
 };

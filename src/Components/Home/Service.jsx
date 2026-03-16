@@ -215,12 +215,26 @@ const ServicesSection = () => {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="group inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-red-500/25">
-            Explore All Properties
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm p-2 pr-6 rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+            <span className="bg-red-500 text-white px-6 py-2 rounded-full font-medium mr-4 shadow-lg">
+              View All
+            </span>
+            <span className="text-gray-200">Explore All Properties</span>
+            <svg
+              className="w-5 h-5 ml-3 text-red-400 animate-pulse"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 
