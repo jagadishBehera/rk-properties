@@ -86,18 +86,18 @@ const Navbar = () => {
 
   const navLinks = ["Home", "Features", "Services", "Contact", "About"];
 
-  const scrollToSection = (e, link) => {
-    e.preventDefault();
-    const element = document.getElementById(link.toLowerCase());
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-    setActiveLink(link);
-    setIsOpen(false);
-  };
+  // const scrollToSection = (e, link) => {
+  //   e.preventDefault();
+  //   const element = document.getElementById(link.toLowerCase());
+  //   if (element) {
+  //     element.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  //   setActiveLink(link);
+  //   setIsOpen(false);
+  // };
 
   // Animation variants
   const logoVariants = {

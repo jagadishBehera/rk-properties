@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import {
   motion,
   useInView,
-  useAnimation,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -17,8 +16,6 @@ import {
   Linkedin,
   Send,
   CheckCircle,
-  Navigation,
-  Home,
 } from "lucide-react";
 
 // Mock map component - in production, replace with Google Maps, Mapbox, etc.

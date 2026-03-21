@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Home,
   Building2,
-  Briefcase,
   TrendingUp,
   Sparkles,
   ArrowRight,
