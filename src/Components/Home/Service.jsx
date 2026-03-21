@@ -1,14 +1,14 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Home, 
-  Building2, 
-  Briefcase, 
-  TrendingUp, 
+import React, { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Home,
+  Building2,
+  Briefcase,
+  TrendingUp,
   Sparkles,
-  ArrowRight 
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -21,62 +21,65 @@ const ServicesSection = () => {
 
   const services = [
     {
-      title: "Luxury Villas",
-      description: "Exclusive waterfront estates with panoramic views, private pools, and smart home technology.",
+      title: "Buy & Sell Properties",
+      description:
+        "Find your dream property or sell at the best market value with expert guidance.",
       icon: Home,
-      image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      accent: "from-red-500/20 to-transparent"
+      image:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+      accent: "from-red-500/20 to-transparent",
     },
     {
-      title: "Modern Apartments",
-      description: "Contemporary living spaces in prime locations with premium finishes and concierge services.",
+      title: "Rental Services",
+      description:
+        "Explore premium rental homes and commercial spaces at prime locations.",
       icon: Building2,
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      accent: "from-red-500/20 to-transparent"
+      image:
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      accent: "from-red-500/20 to-transparent",
     },
     {
-      title: "Commercial Offices",
-      description: "State-of-the-art workspaces designed for innovation, collaboration, and business growth.",
-      icon: Briefcase,
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      accent: "from-red-500/20 to-transparent"
-    },
-    {
-      title: "Investment Properties",
-      description: "High-yield real estate opportunities in emerging markets with guaranteed returns.",
-      icon: TrendingUp,
-      image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      accent: "from-red-500/20 to-transparent"
-    },
-    {
-      title: "Luxury Interiors",
-      description: "Bespoke interior design solutions by award-winning architects and designers.",
+      title: "Interior Design",
+      description:
+        "Transform your space with modern, luxury interior design solutions.",
       icon: Sparkles,
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      accent: "from-red-500/20 to-transparent"
-    }
+      image:
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+      accent: "from-red-500/20 to-transparent",
+    },
+    {
+      title: "Plotting Projects",
+      description:
+        "Invest in premium plots with high growth potential in strategic locations.",
+      icon: TrendingUp,
+      image:
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+      accent: "from-red-500/20 to-transparent",
+    },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Background color animation
       gsap.to(bgRef.current, {
-        backgroundColor: '#1a1a1a',
-        backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(255, 99, 99, 0.1) 0%, transparent 50%)',
+        backgroundColor: "#1a1a1a",
+        backgroundImage:
+          "radial-gradient(circle at 30% 50%, rgba(255, 99, 99, 0.1) 0%, transparent 50%)",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1
-        }
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
       });
 
       // Cards entrance animation
-      gsap.fromTo(cardsRef.current,
+      gsap.fromTo(
+        cardsRef.current,
         {
           y: 100,
           opacity: 0,
-          scale: 0.9
+          scale: 0.9,
         },
         {
           y: 0,
@@ -87,11 +90,11 @@ const ServicesSection = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
-          }
-        }
+            start: "top 70%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        },
       );
     }, sectionRef);
 
@@ -108,7 +111,8 @@ const ServicesSection = () => {
         ref={bgRef}
         className="absolute inset-0 bg-white transition-colors duration-300"
         style={{
-          backgroundImage: 'radial-gradient(circle at 70% 30%, rgba(255, 99, 99, 0.05) 0%, transparent 50%)'
+          backgroundImage:
+            "radial-gradient(circle at 70% 30%, rgba(255, 99, 99, 0.05) 0%, transparent 50%)",
         }}
       />
 
@@ -120,13 +124,13 @@ const ServicesSection = () => {
             Services
           </h2>
           <p className="text-xl text-white max-w-2xl mx-auto">
-            Discover our exclusive range of premium property services tailored to 
-            discerning clients worldwide.
+            Discover our exclusive range of premium property services tailored
+            to discerning clients worldwide.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isHovered = hoveredIndex === index;
@@ -142,9 +146,9 @@ const ServicesSection = () => {
                 {/* Card Inner */}
                 <div className="absolute inset-0 bg-gray-900">
                   {/* Background Image with Zoom */}
-                  <div 
+                  <div
                     className={`absolute inset-0 transition-transform duration-700 ease-out ${
-                      isHovered ? 'scale-110' : 'scale-100'
+                      isHovered ? "scale-110" : "scale-100"
                     }`}
                   >
                     <img
@@ -156,43 +160,52 @@ const ServicesSection = () => {
 
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
-                  
+
                   {/* Glassmorphism Overlay on Hover */}
-                  <div className={`absolute inset-0 backdrop-blur-[2px] transition-opacity duration-500 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`} style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }} />
+                  <div
+                    className={`absolute inset-0 backdrop-blur-[2px] transition-opacity duration-500 ${
+                      isHovered ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+                  />
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     {/* Icon with Animation */}
-                    <div className={`mb-4 transition-all duration-500 ${
-                      isHovered ? 'scale-110 rotate-12' : 'scale-100 rotate-0'
-                    }`}>
+                    <div
+                      className={`mb-4 transition-all duration-500 ${
+                        isHovered ? "scale-110 rotate-12" : "scale-100 rotate-0"
+                      }`}
+                    >
                       <div className="inline-flex p-3 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
                         <Icon className="w-6 h-6" />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold mb-2">
-                      {service.title}
-                    </h3>
+                    <h3 className="text-xl font-bold mb-2">{service.title}</h3>
 
                     {/* Description - Appears on Hover */}
-                    <div className={`overflow-hidden transition-all duration-500 ${
-                      isHovered ? 'max-h-20 opacity-100 mb-4' : 'max-h-0 opacity-0'
-                    }`}>
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        isHovered
+                          ? "max-h-20 opacity-100 mb-4"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
                       <p className="text-sm text-gray-200">
                         {service.description}
                       </p>
                     </div>
 
                     {/* CTA Button with Animation */}
-                    <button className={`group/btn inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
-                      isHovered 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-4'
-                    }`}>
+                    <button
+                      className={`group/btn inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
+                        isHovered
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-4"
+                      }`}
+                    >
                       <span className="text-red-400 group-hover/btn:text-red-300">
                         View Property
                       </span>
@@ -201,15 +214,24 @@ const ServicesSection = () => {
                   </div>
 
                   {/* Red Accent Line */}
-                  <div className={`absolute top-0 left-0 w-full h-1 bg-red-500 transform origin-left transition-transform duration-500 ${
-                    isHovered ? 'scale-x-100' : 'scale-x-0'
-                  }`} />
+                  <div
+                    className={`absolute top-0 left-0 w-full h-1 bg-red-500 transform origin-left transition-transform duration-500 ${
+                      isHovered ? "scale-x-100" : "scale-x-0"
+                    }`}
+                  />
                 </div>
 
                 {/* Card Lift Effect */}
-                <div className={`absolute inset-0 transition-transform duration-300 ${
-                  isHovered ? '-translate-y-2' : 'translate-y-0'
-                }`} style={{ boxShadow: isHovered ? '0 20px 40px rgba(0,0,0,0.3)' : 'none' }} />
+                <div
+                  className={`absolute inset-0 transition-transform duration-300 ${
+                    isHovered ? "-translate-y-2" : "translate-y-0"
+                  }`}
+                  style={{
+                    boxShadow: isHovered
+                      ? "0 20px 40px rgba(0,0,0,0.3)"
+                      : "none",
+                  }}
+                />
               </div>
             );
           })}

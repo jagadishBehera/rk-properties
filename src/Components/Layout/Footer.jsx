@@ -32,6 +32,7 @@ import {
   FaDribbble,
   FaBehance,
 } from "react-icons/fa";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -226,15 +227,17 @@ const Footer = () => {
           >
             <motion.div whileHover={{ scale: 1.02 }} className="inline-block">
               <div className="flex items-center space-x-2">
-                <motion.div
+                <motion.img
+                  src={logo}
+                  alt="Brand Logo"
+                  className="w-16 h-16 object-contain"
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="text-red-400"
-                >
-                  <FiHeart className="w-8 h-8" />
-                </motion.div>
-                <h2 className="text-3xl font-bold text-white">Brand</h2>
+                />
+
+                {/* <h2 className="text-3xl font-bold text-white">Brand</h2> */}
               </div>
+
               <motion.div
                 className="h-1 bg-red-500 rounded-full mt-2"
                 initial={{ width: 0 }}

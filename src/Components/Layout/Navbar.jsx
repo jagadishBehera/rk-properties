@@ -7,12 +7,14 @@ import {
 } from "framer-motion";
 import { Menu, X, Zap, Search, ChevronRight } from "lucide-react";
 import logo from "../../assets/logo.png";
+import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
   const [visible, setVisible] = useState(true);
   const [searchFocused, setSearchFocused] = useState(false);
+  const location = useLocation();
 
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
@@ -69,7 +71,20 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  const navLinks = ["Home", "Features", "Solutions", "Pricing", "About"];
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  const navLinks = ["Home", "Features", "Services", "Contact", "About"];
 
   const scrollToSection = (e, link) => {
     e.preventDefault();
@@ -167,7 +182,7 @@ const Navbar = () => {
                 <motion.img
                   src={logo}
                   alt="Logo"
-                  className="h-12 sm:h-14 w-auto object-contain"
+                  className="h-16 sm:h-14 w-auto object-contain"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -176,53 +191,21 @@ const Navbar = () => {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-1">
                 {navLinks.map((link) => (
-                  <motion.a
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    onClick={(e) => scrollToSection(e, link)}
-                    className={`
-                      relative px-4 py-2 text-sm font-medium rounded-lg
-                      transition-all duration-200
-                      ${
-                        activeLink === link
-                          ? "text-red-600"
-                          : "text-gray-600 hover:text-gray-900"
-                      }
-                    `}
-                    whileHover={{ y: -1 }}
-                    whileTap={{ y: 0 }}
-                  >
-                    {link}
-
-                    {/* Red active indicator */}
-                    {activeLink === link && (
-                      <motion.div
-                        layoutId="activeNavIndicator"
-                        className={`
-                          absolute bottom-0 left-3 right-3 h-0.5 rounded-full
-                          ${scrolled ? "bg-red-500" : "bg-white"}
-                        `}
-                        transition={{
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 30,
-                        }}
-                      />
-                    )}
-
-                    {/* Hover background */}
-                    <motion.div
-                      className="absolute inset-0 rounded-lg -z-10"
-                      initial={{ opacity: 0 }}
-                      whileHover={{
-                        opacity: 1,
-                        backgroundColor: scrolled
-                          ? "rgba(239, 68, 68, 0.08)"
-                          : "rgba(255, 255, 255, 0.1)",
+                  <motion.div>
+                    <Link
+                      to={`/#${link.toLowerCase()}`}
+                      onClick={() => {
+                        setActiveLink(link);
+                        setIsOpen(false);
                       }}
-                      transition={{ duration: 0.2 }}
-                    />
-                  </motion.a>
+                      className={`
+      relative px-4 py-2 text-sm font-medium rounded-lg
+      ${activeLink === link ? "text-red-600" : "text-gray-600"}
+    `}
+                    >
+                      {link}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
 
@@ -361,30 +344,21 @@ const Navbar = () => {
                     {/* Mobile Navigation Links */}
                     <div className="space-y-1">
                       {navLinks.map((link) => (
-                        <motion.a
-                          key={link}
-                          variants={mobileItemVariants}
-                          href={`#${link.toLowerCase()}`}
-                          onClick={(e) => scrollToSection(e, link)}
-                          className={`
-                            flex items-center justify-between
-                            w-full px-4 py-3 text-base rounded-xl
-                            transition-all duration-200
-                            ${
-                              activeLink === link
-                                ? "bg-red-50 text-red-600"
-                                : "text-gray-700 hover:bg-gray-50"
-                            }
-                          `}
-                        >
-                          <span>{link}</span>
-                          {activeLink === link && (
-                            <motion.div
-                              layoutId="mobileActiveIndicator"
-                              className="w-1.5 h-1.5 rounded-full bg-red-500"
-                            />
-                          )}
-                        </motion.a>
+                        <motion.div>
+                          <Link
+                            to={`/#${link.toLowerCase()}`}
+                            onClick={() => {
+                              setActiveLink(link);
+                              setIsOpen(false);
+                            }}
+                            className={`
+      relative px-4 py-2 text-sm font-medium rounded-lg
+      ${activeLink === link ? "text-red-600" : "text-gray-600"}
+    `}
+                          >
+                            {link}
+                          </Link>
+                        </motion.div>
                       ))}
                     </div>
 
