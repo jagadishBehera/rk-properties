@@ -120,9 +120,9 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: FiMail, text: "hello@brand.com", delay: 0.2 },
-    { icon: FiPhone, text: "+1 (555) 123-4567", delay: 0.3 },
-    { icon: FiMapPin, text: "San Francisco, CA", delay: 0.4 },
+    { icon: FiMail, text: "info@rk-properties.com", delay: 0.2 },
+    { icon: FiPhone, text: "+916370715019", delay: 0.3 },
+    { icon: FiMapPin, text: "Chakeisihani, Bhubaneswar, Odisha", delay: 0.4 },
   ];
 
   const containerVariants = {

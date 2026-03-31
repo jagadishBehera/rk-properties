@@ -8,6 +8,10 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
+import buyImg from "../../assets/service-1.avif";
+import rentImg from "../../assets/service-2.avif";
+import interiorImg from "../../assets/service-3.avif";
+import plotImg from "../../assets/service-4.avif";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -24,8 +28,7 @@ const ServicesSection = () => {
       description:
         "Find your dream property or sell at the best market value with expert guidance.",
       icon: Home,
-      image:
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+      image: buyImg,
       accent: "from-red-500/20 to-transparent",
     },
     {
@@ -33,8 +36,7 @@ const ServicesSection = () => {
       description:
         "Explore premium rental homes and commercial spaces at prime locations.",
       icon: Building2,
-      image:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      image: rentImg,
       accent: "from-red-500/20 to-transparent",
     },
     {
@@ -42,8 +44,7 @@ const ServicesSection = () => {
       description:
         "Transform your space with modern, luxury interior design solutions.",
       icon: Sparkles,
-      image:
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+      image: interiorImg,
       accent: "from-red-500/20 to-transparent",
     },
     {
@@ -51,8 +52,7 @@ const ServicesSection = () => {
       description:
         "Invest in premium plots with high growth potential in strategic locations.",
       icon: TrendingUp,
-      image:
-        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+      image: plotImg,
       accent: "from-red-500/20 to-transparent",
     },
   ];

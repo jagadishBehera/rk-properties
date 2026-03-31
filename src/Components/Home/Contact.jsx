@@ -1,10 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -23,12 +18,13 @@ const InteractiveMap = () => {
   return (
     <div className="w-full h-full min-h-[450px] rounded-2xl overflow-hidden shadow-2xl">
       <iframe
-        title="Google Map"
-        src="https://www.google.com/maps?q=Beverly+Hills+CA&output=embed"
-        className="w-full h-full border-0"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d466.9140746701431!2d85.8629354605204!3d20.308916017251263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774115225088!5m2!1sen!2sin"
+        className="w-full h-full"
+        allowfullscreen=""
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         allowFullScreen
-      />
+      ></iframe>
     </div>
   );
 };
@@ -241,22 +237,22 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+      details: ["+916370715019"],
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@luxuryrealestate.com", "support@luxuryrealestate.com"],
+      details: ["info@rk-properties.com"],
     },
     {
       icon: Clock,
       title: "Office Hours",
-      details: ["Mon-Fri: 9:00 AM - 7:00 PM", "Sat-Sun: 10:00 AM - 5:00 PM"],
+      details: ["Mon-Fri: 9:00 AM - 7:00 PM", "Sat-Sun: 9:00 AM - 7:00 PM"],
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Luxury Avenue", "Beverly Hills, CA 90210"],
+      details: ["Chakeisihani", " Bhubaneswar, Odisha"],
     },
   ];
 

@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Bed, Square, MapPin, Heart, Bath, Star } from "lucide-react";
+import villaImg from "../../assets/dreamHome-1.jpeg";
+import apartmentImg from "../../assets/dreamHome-2.jpeg";
+import budgetImg from "../../assets/dreamHome-3.jpeg";
+import beachImg from "../../assets/dreamHome-4.jpeg";
+import powaiImg from "../../assets/dreamHome-5.jpeg";
+import duplexImg from "../../assets/dreamHome-6.jpeg";
 
 const DreamHome = () => {
   const properties = [
@@ -13,7 +19,7 @@ const DreamHome = () => {
       baths: 3,
       sqft: 3200,
       rating: 4.8,
-      imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      imageUrl: villaImg,
     },
     {
       id: 2,
@@ -24,7 +30,7 @@ const DreamHome = () => {
       baths: 2,
       sqft: 2100,
       rating: 4.6,
-      imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      imageUrl: apartmentImg,
     },
     {
       id: 3,
@@ -35,7 +41,7 @@ const DreamHome = () => {
       baths: 2,
       sqft: 1400,
       rating: 4.4,
-      imageUrl: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6",
+      imageUrl: budgetImg,
     },
     {
       id: 4,
@@ -46,7 +52,7 @@ const DreamHome = () => {
       baths: 4,
       sqft: 4500,
       rating: 4.9,
-      imageUrl: "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
+      imageUrl: beachImg,
     },
     {
       id: 5,
@@ -57,7 +63,7 @@ const DreamHome = () => {
       baths: 2,
       sqft: 1600,
       rating: 4.5,
-      imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+      imageUrl: powaiImg,
     },
     {
       id: 6,
@@ -68,29 +74,7 @@ const DreamHome = () => {
       baths: 3,
       sqft: 2500,
       rating: 4.7,
-      imageUrl: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
-    },
-    {
-      id: 5,
-      title: "Smart City Apartment",
-      location: "Powai, Mumbai",
-      price: "₹1.5 Cr",
-      beds: 2,
-      baths: 2,
-      sqft: 1600,
-      rating: 4.5,
-      imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
-    },
-    {
-      id: 6,
-      title: "Elegant Duplex House",
-      location: "Sector 62, Noida",
-      price: "₹1.2 Cr",
-      beds: 3,
-      baths: 3,
-      sqft: 2500,
-      rating: 4.7,
-      imageUrl: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      imageUrl: duplexImg,
     },
   ];
 
