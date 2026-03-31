@@ -24,6 +24,7 @@ const InteractiveMap = () => {
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowFullScreen
+        title="Google Maps Location"
       ></iframe>
     </div>
   );
